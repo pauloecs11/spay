@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http:/www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Tu Carrito</title>
+</head>
+<body>
+<h1>Tu carrito</h1>
+	<form  th:action="@{pagar}" method="post">
+		<div>
+		<label for="comments">Poductos:</label>
+		<label  id="comments"  >Audifonos bluetooth</label>
+		</div>
+		<label>Monto a pagar: </label>
+		<label th:text="${amount}"></label>
+		<input type="hidden" th:value="${amount}" name="amount" id="amount">
+		<input type="hidden" name="buyOrder" id="buyOrder" th:value="${buyOrder}">
+		<input type="hidden" name="sessionId" id="sessionId" th:value="${sessionId}" >
+		<input type="hidden" name="returnUrl" id="returnURl" th:value="${returnUrl}">
+		<div>
+		<input type="submit" value="Ir a pagar">
+		</div>
+	</form>
+
+</body>
+</html>

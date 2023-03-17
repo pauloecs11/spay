@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http:/www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Estado del pago:</title>
+</head>
+<body>
+	<h1>Estado del pago:</h1>
+	
+	<h3 th:text="${estatusPago}"></h3>
+	<p th:text="${detalleEstado}"></p>
+	<p>El id de tu transaccion es: </p>
+	<label th:text="${idTransaccion}"></label>
+	<br><br>
+	<a th:href="@{/index}">Volver al home</a>
+</body>
+</html>

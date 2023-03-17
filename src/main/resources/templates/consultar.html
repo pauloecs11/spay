@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http:/www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Consulta de la transacción</title>
+</head>
+<body>
+	<h1>Estado de la transaccion</h1>
+	<div>
+		<table th:if="${status != null}" border="1">
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>token</th>
+					<th>vci</th>
+					<th>amount</th>
+					<th>status</th>
+					<th>buyOrder</th>
+					<th>sessionId</th>
+					<th>cardNumber</th>
+					<th>acountingDate</th>
+					<th>transactionDate</th>
+					<th>authorizationCode</th>
+					<th>paymentType</th>
+					<th>responseCode</th>
+					<th>installmentsAmount</th>
+					<th>installmentSNumber</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td th:text="${id}"></td>
+					<td th:text="${token}"></td>
+					<td th:text="${vci}"></td>
+					<td th:text="${amount}"></td>
+					<td th:text="${status}"></td>
+					<td th:text="${buyOrder}"></td>
+					<td th:text="${sessionId}"></td>
+					<td th:text="${cardNumber}"></td>
+					<td th:text="${acountingDate}"></td>
+					<td th:text="${transactionDate}"></td>
+					<td th:text="${authorizationCode}"></td>
+					<td th:text="${paymentTypeCode}"></td>
+					<td th:text="${responseCode}"></td>
+					<td th:text="${installmentsAmount}"></td>
+					<td th:text="${installmentsNumber}"></td>
+				</tr>
+			
+			</tbody>
+		</table>
+		<div th:if="${status==null}">
+			<form  th:action="@{consultar}" method="get">
+				<label>Consulte el estado de su transacción:</label>
+				<br>
+				<label>Id de transacción:</label>
+				<input type="number" name="idT" id="idT">
+				<input type="submit" value="Consultar">
+			</form>
+		</div>
+	</div>
+	<a th:href="@{/index}">Volver al home</a>
+</body>
+</html>
